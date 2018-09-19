@@ -15,7 +15,7 @@ public class DataConfiguration {
 	
 	@Bean
     public DataSource dataSource(){
-		System.out.println("My Sql.");
+		System.out.println("My Sql Configurado.");
 		
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
