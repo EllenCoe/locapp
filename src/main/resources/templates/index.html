@@ -12,3 +12,35 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" href="style/styleCss.css"/>
 </head>
+
+<body>
+	
+	<header>
+		<nav class="menu">
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Lista de Equipzmentos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/cadastrarEquipamento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar evento</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	
+	</header>
+	<body>
+		<div th:each ="equipamento : ${equipamentos}">
+		<dic class = "row">
+				<p><span th:text="${equipamento.nome}"></span></p>
+				<p><span th:text="${equipamento.patrimonio}"></span></p>
+				<p><span th:text="${equipamento.serie}"></span></p>
+				<p><span th:text="${equipamento.marca}"></span></p>
+				<p><span th:text="${equipamento.setor}"></span></p>
+				<p><span th:text="${equipamento.modelo}"></span></p>
+				<p><span th:text="${equipamento.tag}"></span></p>
+				</div>
+				
+				</div>
+				
+
+</body>
+
+</html>

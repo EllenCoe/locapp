@@ -31,6 +31,16 @@ public class Equipamento implements Serializable {
 	private String patrimonio;
 	
 	private String serie;
+	
+	public String getSetor() {
+		return setor;
+	}
+
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
+
+	private String setor;
 
 	private String marca;
 	
