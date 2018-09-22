@@ -27,15 +27,37 @@
 	
 	</header>
 	
-	<h1>Sistema Equipamentos!!!</h1>
-	<h3> Prototipo em Teste</h3>
-	<body>
+ 	<table class = "container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Patrimonio</th>
+				<th>Serie</th>
+				<th>Marca</th>
+				<th>Modelo</th>
+				<th>Setor</th>
+				<th>TagId</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="equipamento : ${equipamentos}">
+				<td><span th:text="${equipamento.nome}"></span></td>
+				<td><span th:text="${equipamento.patrimonio}"></span></td>
+				<td><span th:text="${equipamento.serie}"></span></td>
+				<td><span th:text="${equipamento.marca}"></span></td>
+				<td><span th:text="${equipamento.modelo}"></span></td>
+				<td><span th:text="${equipamento.setor}"></span></td>
+				<td><span th:text="${equipamento.tag}"></span></td>
+			</tr>
+		</tbody>
+	
+	</table>
+				
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-
-	</body>
-
-
+	
+</body>
+	
 
 </html>

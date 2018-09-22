@@ -8,14 +8,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.localizar.locapp.models.Equipamento;
+import com.localizar.locapp.models.Localizacao;
 import com.localizar.locapp.repository.EquipamentoRepository;
+import com.localizar.locapp.repository.LocalizacaoRepository;
 
 
 @Controller
 public class EquipamentoController {
 	@Autowired
 	private EquipamentoRepository er;
-	
+	@Autowired
+	private LocalizacaoRepository lr;
 	
 	@RequestMapping(value="/cadastrarEquipamento", method = RequestMethod.GET)
 	public String form(){
@@ -28,16 +31,7 @@ public class EquipamentoController {
 		return "redirect:/cadastrarEquipamento";
 	}
 	
-	@RequestMapping("/equipamentos")
-	public ModelAndView ListaEquipamentos(){
-		ModelAndView mv =new ModelAndView("index");
-		Iterable<Equipamento> equipamentos = er.findAll();
-		mv.addObject("equipamentos", equipamentos);
-		return mv;
-		
-		
-	}
-	@RequestMapping("/{codigo}")
+	@RequestMapping(value= "/{codigo}", method= RequestMethod.GET)
 	public ModelAndView detalhesEquipamento(@PathVariable("codigo") long codigo){
 		
 		Equipamento equipamento = er.findByCodigo(codigo);
@@ -47,4 +41,25 @@ public class EquipamentoController {
 		
 		return mv;
 	}
+	@RequestMapping(value= "/{codigo}", method= RequestMethod.POST)
+	public String detalhesEquipamento(@PathVariable("codigo") long codigo, Localizacao localizacao){
+		Equipamento equipamento = er.findByCodigo(codigo);
+		localizacao.setEquipamento(equipamento);
+		lr.save(localizacao);
+		return "redirect:/equipamentos";
+	}
+		
+	
+	
+	@RequestMapping("/equipamentos")
+	public ModelAndView listaEquipamentos(){
+		ModelAndView mv = new ModelAndView("listaEquipamentos");
+		Iterable<Equipamento> equipamentos = er.findAll();
+		mv.addObject("equipamentos", equipamentos);
+		return mv;
+	}
+	
+	
+	
+	
 }

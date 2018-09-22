@@ -30,7 +30,7 @@ public class Localizacao {
 	public Equipamento getEquipamento() {
 		return equipamento;
 	}
-	public void setEvento(Equipamento equipamento) {
+	public void setEquipamento(Equipamento equipamento) {
 		this.equipamento = equipamento;
 	}
 	
