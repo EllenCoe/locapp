@@ -37,7 +37,10 @@ public class EquipamentoController {
 		Equipamento equipamento = er.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView ("equipamento/detalhesEquipamento");
 		mv.addObject("equipamento", equipamento);
-		System.out.println("Equipamento" + equipamento);
+		
+		Iterable<Localizacao> localizacoes = lr.findByEquipamento(equipamento);
+		mv.addObject("localizacoes", localizacoes);
+		
 		
 		return mv;
 	}
@@ -46,7 +49,7 @@ public class EquipamentoController {
 		Equipamento equipamento = er.findByCodigo(codigo);
 		localizacao.setEquipamento(equipamento);
 		lr.save(localizacao);
-		return "redirect:/equipamentos";
+		return "redirect:/detalhesEquipamento{codigo}";
 	}
 		
 	
