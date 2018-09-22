@@ -31,7 +31,7 @@ public class EquipamentoController {
 		return "redirect:/cadastrarEquipamento";
 	}
 	
-	@RequestMapping(value= "/{codigo}", method= RequestMethod.GET)
+	@RequestMapping(value= "/detalhesEquipamento{codigo}", method= RequestMethod.GET)
 	public ModelAndView detalhesEquipamento(@PathVariable("codigo") long codigo){
 		
 		Equipamento equipamento = er.findByCodigo(codigo);
@@ -41,7 +41,7 @@ public class EquipamentoController {
 		
 		return mv;
 	}
-	@RequestMapping(value= "/{codigo}", method= RequestMethod.POST)
+	@RequestMapping(value= "/detalhesEquipamento{codigo}", method= RequestMethod.POST)
 	public String detalhesEquipamento(@PathVariable("codigo") long codigo, Localizacao localizacao){
 		Equipamento equipamento = er.findByCodigo(codigo);
 		localizacao.setEquipamento(equipamento);

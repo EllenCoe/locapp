@@ -30,6 +30,7 @@
 	
 	<div th:each = "equipamento : ${equipamento}" class = "container">
 		<div class="row">
+			<p>Codigo: <span th:text = "${equipamento.codigo}"></span></p>
 			<p>Nome: <span th:text = "${equipamento.nome}"></span></p>
 			<p>Patrimonio: <span th:text = "${equipamento.patrimonio}"></span></p>
 			<p>Serie: <span th:text = "${equipamento.serie}"></span></p>

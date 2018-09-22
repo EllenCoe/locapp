@@ -30,6 +30,7 @@
  	<table class = "container">
 		<thead>
 			<tr>
+				<th>Codigo</th>
 				<th>Nome</th>
 				<th>Patrimonio</th>
 				<th>Serie</th>
@@ -41,7 +42,9 @@
 		</thead>
 		<tbody>
 			<tr th:each="equipamento : ${equipamentos}">
-				<td><span th:text="${equipamento.nome}"></span></td>
+				
+				<td><span th:text="${equipamento.codigo}"></span></td>
+				<td><a th:href="@{/detalhesEquipamento{codigo}(codigo = ${equipamento.codigo}) }"><span th:text="${equipamento.nome}"></span></a></td>
 				<td><span th:text="${equipamento.patrimonio}"></span></td>
 				<td><span th:text="${equipamento.serie}"></span></td>
 				<td><span th:text="${equipamento.marca}"></span></td>
