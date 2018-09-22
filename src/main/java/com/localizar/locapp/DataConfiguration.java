@@ -1,10 +1,10 @@
 package com.localizar.locapp;
 
-import org.springframework.context.annotation.Configuration;
-
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.Database;
@@ -15,9 +15,7 @@ public class DataConfiguration {
 	
 	@Bean
     public DataSource dataSource(){
-		System.out.println("My Sql Configurado.");
-		
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/locapp");
         dataSource.setUsername("root");

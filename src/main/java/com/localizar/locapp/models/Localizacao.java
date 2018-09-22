@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 
-public class Equipamento implements Serializable {
+public class Localizacao implements Serializable {
 
    private static final long serialVersionUID = 1L;
 	
