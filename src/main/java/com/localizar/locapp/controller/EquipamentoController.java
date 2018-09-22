@@ -2,6 +2,7 @@ package com.localizar.locapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,5 +37,14 @@ public class EquipamentoController {
 		
 		
 	}
-
+	@RequestMapping("/{codigo}")
+	public ModelAndView detalhesEquipamento(@PathVariable("codigo") long codigo){
+		
+		Equipamento equipamento = er.findByCodigo(codigo);
+		ModelAndView mv = new ModelAndView ("equipamento/detalhesEquipamento");
+		mv.addObject("equipamento", equipamento);
+		System.out.println("Equipamento" + equipamento);
+		
+		return mv;
+	}
 }

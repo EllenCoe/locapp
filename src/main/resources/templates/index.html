@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
  <head>
-	<title>EventosApp</title>
+	<title>App</title>
 	 <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <!--Import materialize.css-->
@@ -38,7 +38,7 @@
 		</thead>
 		<tbody>
 			<tr th:each="equipamento : ${equipamentos}">
-				<td><span th:text="${equipamento.nome}"></span></td>
+				<td><a th:href="${(#mvc.url('EC#detalhesEquipamento').arg(0, equipamento.codigo)).build()}"><span th:text="${equipamento.nome}"></span></a></td>
 				<td><span th:text="${equipamento.patrimonio}"></span></td>
 				<td><span th:text="${equipamento.serie}"></span></td>
 				<td><span th:text="${equipamento.marca}"></span></td>

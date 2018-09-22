@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-	<title>LocalizarApp</title>
-    
+ <head>
+	<title>App</title>
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style/styleCss.css"/>
 </head>
 <body>
-
-	
-
-	<form class="container" method="post">
+	<header>
+		<nav class="menu">
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Equipamentos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/equipamentos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de equipamentos</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</header>
+		<form class="container" method="post">
 		Nome: <input type="text" value="" name="nome"/>
 		<div class="row">
 			<div class="input-field col s6">
 				Patrimonio: <input type="text" value="" name="patrimonio"/>
 			</div>
-			<div class="input-field col s3">
+			<div class="input-field col s4">
 				Serie: <input type="text" value="" name="serie"/>
 			</div>
 			<div class="input-field col s6">
-				Setor de Origem: <input type="text" value="" name="setor"/>
-			</div>
-			
-			<div class="input-field col s3">
 				Marca: <input type="text" value="" name="marca"/>
 			</div>
 			
+			<div class="input-field col s4">
+				modelo: <input type="text" value="" name="modelo"/>
+			</div>
+			
 			<div class="input-field col s6">
-				Modelo: <input type="text" value="" name="modelo"/>
+				Setor de Origem: <input type="text" value="" name="setor"/>
 			</div>
 			
 			<div class="input-field col s3">
@@ -38,6 +52,8 @@
 	
 	</form>
 	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	
 </body>
 
