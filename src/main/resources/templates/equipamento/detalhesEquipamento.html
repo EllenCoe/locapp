@@ -39,6 +39,9 @@
 			<p>Setor de Origem: <span th:text = "${equipamento.setor}"></span></p>
 			<p>Tag Id: <span th:text = "${equipamento.tag}"></span></p>
 		</div>
+		
+		<th:block th:include="mensagemValidacao"></th:block>
+		
 		<form method = "post">
 			Posição <input type="text" value="" name="posicao"/>
 			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
@@ -46,6 +49,8 @@
 		
 		<h5>Rastreamento</h5>
 	</div>
+	
+	
 	
 	<div class = "container" th:each= "localizacao : ${localizacoes}">
 		<div class= "row">

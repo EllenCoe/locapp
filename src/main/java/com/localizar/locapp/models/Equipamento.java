@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
@@ -30,11 +31,11 @@ public class Equipamento implements Serializable{
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
-
+	@NotEmpty
 	private String nome;
-	
+	@NotEmpty
 	private String patrimonio;
-	
+	@NotEmpty
 	private String serie;
 	
 	public String getSetor() {
@@ -44,15 +45,15 @@ public class Equipamento implements Serializable{
 	public void setSetor(String setor) {
 		this.setor = setor;
 	}
-
+	@NotEmpty
 	private String setor;
-
+	@NotEmpty
 	private String marca;
 	
-
+	@NotEmpty
 	private String modelo;
 	
-	
+	@NotEmpty
 	private String tag;
 
 
