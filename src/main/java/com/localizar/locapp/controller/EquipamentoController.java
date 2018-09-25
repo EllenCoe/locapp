@@ -77,6 +77,13 @@ public class EquipamentoController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/deletarEquipamento{codigo}",method= RequestMethod.GET)
+	public String deletarEquipamento(@PathVariable("codigo") long codigo){
+		Equipamento equipamento = er.findByCodigo(codigo);
+		er.delete(equipamento);
+		return "redirect:/equipamentos";
+	}
+	
 	
 	
 	
