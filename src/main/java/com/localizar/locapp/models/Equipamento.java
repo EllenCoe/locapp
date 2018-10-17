@@ -23,7 +23,7 @@ public class Equipamento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	
+	@NotNull
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long codigo;
 	
@@ -60,10 +60,6 @@ public class Equipamento implements Serializable{
 	@NotEmpty
 	private String modelo;
 	
-	@NotEmpty
-	private String tag;
-
-
 
 	public String getNome() {
 		return nome;
@@ -105,12 +101,6 @@ public class Equipamento implements Serializable{
 		this.modelo = modelo;
 	}
 
-	public String getTag() {
-		return tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
+	
 	
 }

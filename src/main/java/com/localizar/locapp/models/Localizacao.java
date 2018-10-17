@@ -29,7 +29,26 @@ public class Localizacao {
 	
 	@Id
 	@NotEmpty
-	private Double posicao;
+	private String tagID;
+	
+	public String getTagID() {
+		return tagID;
+	}
+
+	public void setTagID(String tagID) {
+		this.tagID = tagID;
+	}
+
+	private Double localiza;
+	
+	public Double getLocaliza() {
+		return localiza;
+	}
+
+	public void setLocaliza(Double localiza) {
+		this.localiza = localiza;
+	}
+
 	private Date data;
 	private String time;
 	
@@ -73,16 +92,7 @@ public class Localizacao {
 	}*/
 	
 	
-	public Double getPosicao() {
-		return posicao;
-	}
-
-
-
-
-	public void setPosicao(Double posicao) {
-		this.posicao = posicao;
-	}
+	
 	
 	@ManyToOne
 	private Equipamento equipamento;

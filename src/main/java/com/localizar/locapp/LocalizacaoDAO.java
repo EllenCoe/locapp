@@ -20,15 +20,16 @@ public class LocalizacaoDAO {
 		
 		try {
 			
-            stmt = con.prepareStatement("INSERT INTO localizacao (posicao,equipamento_codigo,data,time) VALUES (?,?,?,?)");
+            stmt = con.prepareStatement("UPDATE localizacao SET localiza =?, "
+                    + "equipamento_codigo =?, data =?,"
+                    + "time =?"
+                    + " WHERE tagID =?");
             stmt.setString(1, "92.0");
             stmt.setInt(2, 1);
             stmt.setDate(3, new java.sql.Date(System.currentTimeMillis()));
-            
-            
-           
-            
             stmt.setString(4, new SimpleDateFormat("yyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
+            stmt.setString(5, "5");
+            
             stmt.executeUpdate();
          // executa
         	stmt.execute();
@@ -52,7 +53,7 @@ public class LocalizacaoDAO {
 	public static void main(String[] args) {
 		
 		Localizacao loc = new Localizacao();
-		loc.setPosicao(23.0);
+		loc.setLocaliza(23.0);
 		
 		LocalizacaoDAO dao = new LocalizacaoDAO();
 		

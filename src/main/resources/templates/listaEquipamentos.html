@@ -37,7 +37,7 @@
 				<th>Marca</th>
 				<th>Modelo</th>
 				<th>Setor</th>
-				<th>TagId</th>
+				
 				<th>Deletar</th>
 			</tr>
 		</thead>
@@ -51,7 +51,7 @@
 				<td><span th:text="${equipamento.marca}"></span></td>
 				<td><span th:text="${equipamento.modelo}"></span></td>
 				<td><span th:text="${equipamento.setor}"></span></td>
-				<td><span th:text="${equipamento.tag}"></span></td>
+			
 				<td><a class="waves-effect waves-light btn-small" th:href="@{/deletarEquipamento{codigo}(codigo = ${equipamento.codigo}) }"><span th:text="Deletar"><i class="material-icons left">delete</i></a></td>
 			</tr>
 		</tbody>

@@ -38,19 +38,19 @@
 			<p>Marca: <span th:text = "${equipamento.marca}"></span></p>
 			<p>Modelo: <span th:text = "${equipamento.modelo}"></span></p>
 			<p>Setor de Origem: <span th:text = "${equipamento.setor}"></span></p>
-			<p>Tag Id: <span th:text = "${equipamento.tag}"></span></p>
+			
 		</div>
 		</div>
 		
 		
 		<th:block th:include="mensagemValidacao"></th:block>
 		
-		<!--<div class="container formLocalizacao">
+		<div class="container formLocalizacao">
 		<form method = "post">
-			Posição <input type="text" value="" name="posicao"/>
+			TagId <input type="text" value="" name="tagID"/>
 			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
 		</form>
-		</div>-->
+		</div>
 		
 		
 	<div class="container containerPosicao">
@@ -60,7 +60,7 @@
 				<div class= "row">
 					<div class="input-field col s6">
 						
-						Posição: <p><span th:text="${localizacao.posicao}"></span></p>
+						Posição: <p><span th:text="${localizacao.localiza}"></span></p>
 						
 					</div>
 					<div class="input-field col s6">
