@@ -59,7 +59,14 @@
 			<div class = "container" th:each= "localizacao : ${localizacoes}">
 				<div class= "row">
 					<div class="input-field col s6">
+						
 						Posição: <p><span th:text="${localizacao.posicao}"></span></p>
+						
+					</div>
+					<div class="input-field col s6">
+						
+						Data: <p><span th:text="${localizacao.time}"></span></p>
+						
 					</div>
 				</div>
 			</div>

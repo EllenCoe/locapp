@@ -1,6 +1,9 @@
 package com.localizar.locapp.models;
 
-import java.sql.Date;
+
+import java.util.Date;
+import java.sql.Time;
+//import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -21,13 +24,26 @@ public class Localizacao {
 	
 	
 	
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long idtemp;
+	/*@GeneratedValue(strategy= GenerationType.AUTO)
+	private long idtemp;*/
 	
 	@Id
 	@NotEmpty
 	private Double posicao;
+	private Date data;
+	private String time;
 	
+	
+	public String getTime() {
+		return time;
+	}
+
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+
 	public Date getData() {
 		return data;
 	}
@@ -36,24 +52,27 @@ public class Localizacao {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	private Date data;
+	
+	
 
 	
-	private String getDateTime() {
+	/*private String getDateTime() {
 		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
 		Date date = new Date(System.currentTimeMillis());
 		return dateFormat.format(date);
-	}
+	}*/
 	
 	
 	
 	
-	public long getIdtemp() {
+	/*public long getIdtemp() {
 		return idtemp;
 	}
 	public void setIdtemp(long idtemp) {
 		this.idtemp = idtemp;
-	}
+	}*/
+	
+	
 	public Double getPosicao() {
 		return posicao;
 	}

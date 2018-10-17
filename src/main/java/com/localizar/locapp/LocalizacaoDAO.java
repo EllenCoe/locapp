@@ -3,7 +3,10 @@ package com.localizar.locapp;
 import com.localizar.locapp.models.Localizacao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.PreparedStatement;
@@ -17,10 +20,15 @@ public class LocalizacaoDAO {
 		
 		try {
 			
-            stmt = con.prepareStatement("INSERT INTO localizacao (posicao,equipamento_codigo,idtemp) VALUES (?,?,?)");
-            stmt.setString(1, "50.0");
-            stmt.setInt(2, 6);
-            stmt.setInt(3,12);
+            stmt = con.prepareStatement("INSERT INTO localizacao (posicao,equipamento_codigo,data,time) VALUES (?,?,?,?)");
+            stmt.setString(1, "92.0");
+            stmt.setInt(2, 1);
+            stmt.setDate(3, new java.sql.Date(System.currentTimeMillis()));
+            
+            
+           
+            
+            stmt.setString(4, new SimpleDateFormat("yyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
             stmt.executeUpdate();
          // executa
         	stmt.execute();

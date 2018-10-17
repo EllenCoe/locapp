@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -22,6 +23,7 @@ public class Equipamento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long codigo;
 	
